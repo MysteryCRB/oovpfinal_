@@ -1,4 +1,5 @@
-Welcome to my final OOVP Project
+Welcome to my final OOVP Project.
+
 This repository contains the source code for a laundry management system developed using Java as part of the Object Oriented Visual Programming subject.
 
 About the author
