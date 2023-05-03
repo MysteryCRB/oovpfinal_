@@ -18,6 +18,8 @@ The Project was made by Almendo Gabriel Teteletpa (001202200002)
 - Download and install NetBeans
 - Download / clone the project
 - Paste it to your NetBeans project folder (Documents/NetBeansProjects)
+- Open the project's folder and go to sql folder
+- Import SQL File to Phpmyadmin
 - Open NetBeans
 - Press Ctrl + Shift + O (Open Project)
 - Select the project
