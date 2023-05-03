@@ -1,11 +1,29 @@
-Welcome to my final OOVP Project.
+# Laundry Management System
 
-This repository contains the source code for a laundry management system developed using Java as part of the Object Oriented Visual Programming subject.
+Laundry management system is a software solution designed to simplify and streamline the process of managing laundry services, including order tracking, and billing.
 
-About the author
+# About
 
-Almendo Gabriel Tetelepta (001202200002)
+The Project was made by Almendo Gabriel Teteletpa (001202200002)
 
-About the project
+# Project Info
 
-The Laundry Management System is a Java-based application that helps to manage laundry operations in a more organized and efficient way. The application offers features such as customer management, order tracking, billing, and reporting.
+- This is a Final Project for OOVP Subject
+- Language (Java)
+- Using NetBeans
+
+# How to use
+
+- Install [Java Development Kit](https://www.oracle.com/id/java/technologies/downloads/)
+- Download and install NetBeans
+- Download / clone the project
+- Paste it to your NetBeans project folder (Documents/NetBeansProjects)
+- Open NetBeans
+- Press Ctrl + Shift + O (Open Project)
+- Select the project
+- Launch the Project
+
+# Note
+If there's an error when you open the project's folder, usually MySQLDriver and Jcalendar, you can resolve it by select the Jcalendar in the main folder, and create a new class named MySQLDriver and choose the mysql jar from lib/mysql.jar
+
+## Thank You!
