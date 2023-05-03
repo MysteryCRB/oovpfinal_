@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2023 at 07:56 AM
+-- Generation Time: May 03, 2023 at 05:35 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -65,13 +65,10 @@ CREATE TABLE `cucian` (
 --
 
 INSERT INTO `cucian` (`id_cucian`, `berat`, `tanggal_masuk`, `harga`, `statuspembayaran`, `statustransaksi`, `tanggal_keluar`, `id_pelanggan`, `id_admin`) VALUES
-(2, 1, '20/11/2018', 5000, 'Belum Lunas', 'On Process', NULL, 1, 1),
-(3, 1, '20/11/2018', 5000, 'Lunas', 'Selesai', '23/11/2018', 2, 1),
-(4, 4, '22/11/2018', 20000, 'Lunas', 'Selesai', '25/11/2018', 3, 1),
-(5, 3, '27/11/2018', 15000, 'Lunas', 'Selesai', '27/11/2018', 10, 1),
-(6, 5, '27/11/2018', 25000, 'Lunas', 'Selesai', '28/11/2018', 11, 1),
-(7, 5, '30/11/2018', 25000, 'Lunas', 'Selesai', '30/11/2018', 12, 1),
-(8, 5, '02/05/2023', 25000, 'Lunas', 'Selesai', '02/05/2023', 13, 1);
+(2, 1, '12/1/2023', 5000, 'Belum Lunas', 'On Process', NULL, 1, 1),
+(8, 5, '02/05/2023', 25000, 'Lunas', 'Selesai', '02/05/2023', 13, 1),
+(9, 6, '02/05/2023', 30000, 'Lunas', 'Selesai', '02/05/2023', 14, 1),
+(10, 8, '02/05/2023', 40000, 'Lunas', 'Selesai', '02/05/2023', 15, 1);
 
 -- --------------------------------------------------------
 
@@ -98,7 +95,9 @@ INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `alamat_pelanggan`, `
 (10, 'Putri', 'sukabirus', '0998', 'Perempuan'),
 (11, 'ASD', 'PGA', '35839434', 'Laki-Laki'),
 (12, 'Final', 'Final', '0000', 'Perempuan'),
-(13, 'Muhammad Alief Firmanda', 'Pinggi Kali', '085161611095', 'Laki-Laki');
+(13, 'Muhammad Alief Firmanda', 'Pinggi Kali', '085161611095', 'Laki-Laki'),
+(14, 'Clay Steve Langi', 'SBH', '082196443955', 'Laki-Laki'),
+(15, 'Farhan Ali Ramadhan', 'NBH', '082231435628', 'Laki-Laki');
 
 --
 -- Indexes for dumped tables
@@ -138,13 +137,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `cucian`
 --
 ALTER TABLE `cucian`
-  MODIFY `id_cucian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_cucian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
