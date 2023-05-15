@@ -5,6 +5,13 @@
  */
 package laundry.manager;
 
+import java.awt.Container;
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JInternalFrame;
+import javax.swing.tree.DefaultMutableTreeNode;
+
 /**
  *
  * @author Baskoro Adi
@@ -17,7 +24,7 @@ public class Homepage extends javax.swing.JFrame {
     public Homepage() {
         initComponents();
         this.setLocationRelativeTo(null);
-        labelAdmin.setText("Selamat Datang, "+String.valueOf(adm.nameAdm));
+        labelAdmin.setText("Welcome, "+String.valueOf(adm.nameAdm));
     }
 
     /**
@@ -30,6 +37,9 @@ public class Homepage extends javax.swing.JFrame {
     private void initComponents() {
 
         labelAdmin = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tree = new javax.swing.JTree();
+        Desktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem_Pelanggan = new javax.swing.JMenuItem();
@@ -41,6 +51,38 @@ public class Homepage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         labelAdmin.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("App");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Data");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Pelanggan");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Admin");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Transaksi");
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Transaksi Cucian");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Laporan Transaksi");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        tree.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        tree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
+            public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
+                treeValueChanged(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tree);
+
+        javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
+        Desktop.setLayout(DesktopLayout);
+        DesktopLayout.setHorizontalGroup(
+            DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        DesktopLayout.setVerticalGroup(
+            DesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 450, Short.MAX_VALUE)
+        );
 
         jMenu1.setText("Data");
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
@@ -94,16 +136,27 @@ public class Homepage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelAdmin)
-                .addContainerGap(1062, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(713, 713, 713)
+                        .addComponent(labelAdmin)
+                        .addContainerGap(227, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Desktop)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addComponent(Desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(labelAdmin)
-                .addContainerGap(570, Short.MAX_VALUE))
+                .addGap(248, 248, 248))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -132,6 +185,55 @@ public class Homepage extends javax.swing.JFrame {
         // TODO add your handling code here:
         new LaporanTransaksi().show();
     }//GEN-LAST:event_jMenuItem_LaporanActionPerformed
+
+    private void treeValueChanged(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_treeValueChanged
+        // TODO add your handling code here:
+        DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getLastSelectedPathComponent();
+
+        if (node == null) {
+            return;
+        }
+
+        Object nodeInfo = node.getUserObject();
+        String title = null;
+        Container container = null;
+        
+        if(nodeInfo.toString().equals("Pelanggan")) { 
+            title = "Pelanggan";
+            container = new Pelanggan().getContentPane();
+        }
+        if(nodeInfo.toString().equals("Admin")) { 
+            title = "Admin";
+            container = new Admin().getContentPane();
+        }
+        
+        if(nodeInfo.toString().equals("Transaksi Cucian")) { 
+            title = "Transaksi Cucian";
+            container = new CucianMasuk().getContentPane();
+        }
+        if(nodeInfo.toString().equals("Laporan Transaksi")) { 
+            title = "Laporan Transaksi";
+            container = new LaporanTransaksi().getContentPane();
+        }
+       
+        
+        if(title != null || !title.equals("")) {
+            JInternalFrame internalFrame = new JInternalFrame(title, true, true, true, true);
+            internalFrame.add(container);
+            Desktop.add(internalFrame);
+            try {
+                internalFrame.setMaximum(true);
+            } catch (PropertyVetoException ex) {
+                Logger.getLogger(Homepage.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                        
+          
+            internalFrame.setVisible(true);
+        }
+        if(nodeInfo.toString().equals("keluar")) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_treeValueChanged
 
     /**
      * @param args the command line arguments
@@ -169,13 +271,16 @@ public class Homepage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane Desktop;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem_Admin;
     private javax.swing.JMenuItem jMenuItem_CucianMasuk;
     private javax.swing.JMenuItem jMenuItem_Laporan;
     private javax.swing.JMenuItem jMenuItem_Pelanggan;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelAdmin;
     private javax.swing.JMenu menuCucian;
+    private javax.swing.JTree tree;
     // End of variables declaration//GEN-END:variables
 }
