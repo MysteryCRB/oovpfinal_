@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Baskoro Adi
+ * @author Almendo Gabriel
  */
 public class TambahAdmin extends javax.swing.JFrame {
 

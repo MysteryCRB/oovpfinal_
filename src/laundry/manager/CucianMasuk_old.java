@@ -21,7 +21,7 @@ import org.jdesktop.swingx.JXDatePicker;
 
 /**
  *
- * @author Baskoro Adi
+ * @author Almendo Gabriel
  */
 public class CucianMasuk_old extends javax.swing.JFrame {
 

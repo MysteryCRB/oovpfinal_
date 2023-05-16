@@ -20,7 +20,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 /**
  *
- * @author Baskoro Adi
+ * @author Almendo Gabriel
  */
 public class LaporanTransaksi extends javax.swing.JFrame {
 

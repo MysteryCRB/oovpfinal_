@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Baskoro Adi
+ * @author Almendo Gabriel
  */
 public class UpdateAdmin extends javax.swing.JFrame {
 

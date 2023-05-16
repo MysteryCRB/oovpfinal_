@@ -7,7 +7,7 @@ package laundry.manager;
 
 /**
  *
- * @author Baskoro Adi
+ * @author Almendo Gabriel
  */
 public class adm {
     public static String nameAdm;

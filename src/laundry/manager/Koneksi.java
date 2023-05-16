@@ -8,7 +8,7 @@ import java.sql.*;
 import javax.swing.*;
 /**
  *
- * @author Praktikan
+ * @author Almendo Gabriel
  */
 public class Koneksi {
     private static Connection connection;

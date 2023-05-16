@@ -14,7 +14,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
  *
- * @author Baskoro Adi
+ * @author Almendo Gabriel
  */
 public class Homepage extends javax.swing.JFrame {
 
