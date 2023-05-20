@@ -24,6 +24,7 @@ The Project was made by Almendo Gabriel Teteletpa (001202200002)
 - Press Ctrl + Shift + O (Open Project)
 - Select the project
 - Launch the Project
+- Access the project using this account = (Username: admin, Password: admin123)
 
 # Note
 If there's an error when you open the project's folder, usually MySQLDriver and Jcalendar, you can resolve it by select the Jcalendar in the main folder, and create a new class library named MySQLDriver and choose the mysql jar from lib/mysql.jar
